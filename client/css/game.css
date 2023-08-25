@@ -1,0 +1,83 @@
+.gameHeader {
+  padding: 50vh 20px 30px;
+  /* height: 100vh; */
+  background-attachment: fixed !important;
+  background-position: bottom !important;
+  background-size: cover !important;
+}
+
+#title {
+  margin: 0;
+  color: white;
+}
+
+#shortDescription {
+  max-width: 600px;
+  color: white;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.belowDescription {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.devAndPublisher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  color: grey;
+}
+
+.content {
+  padding: 20px 20px 100px;
+}
+
+#screenshotScroll img,
+#trailerScroll video {
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.horizontal {
+  gap: 10px;
+}
+
+#addReview {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #eee;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.userReviews {
+  margin-top: 30px;
+  display: grid;
+  gap: 10px;
+}
+
+.userReviews .card {
+  padding: 20px;
+}
+
+.userReviews .card .title {
+  font-weight: bold;
+  display: block;
+}
+
+.userReviews .card .ratingAndComment {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}

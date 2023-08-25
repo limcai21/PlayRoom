@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details - PlayRoom</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/game.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html" id="brand">PlayRoom</a>
+    <div class="collapse navbar-collapse"></div>
+    <div class="form-inline my-2 my-sm-0">
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 authenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+      </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 unauthenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- GAME HEADER -->
+  <div class="gameHeader">
+    <h1 id="title"></h1>
+    <span id="shortDescription"></span>
+    <div class="belowDescription">
+      <div class="devAndPublisher">
+        <span id="developer"></span>
+        <span>&#8226;</span>
+        <span id="publisher"></span>
+      </div>
+      <form id="addToFav" style="display: flex; align-items: center; gap: 5px;">
+        <select class="form-control" id="tierSelect" name="tier" required style="width: 130px;">
+          <option value="" disabled selected>Select Tier</option>
+          <option value="S">S</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+        </select>
+        <button type="submit" id="favBtn" class="btn btn-light">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m12.82 5.58-.82.822-.824-.824a5.375 5.375 0 1 0-7.601 7.602l7.895 7.895a.75.75 0 0 0 1.06 0l7.902-7.897a5.376 5.376 0 0 0-.001-7.599 5.38 5.38 0 0 0-7.611 0Zm6.548 6.54L12 19.485 4.635 12.12a3.875 3.875 0 1 1 5.48-5.48l1.358 1.357a.75.75 0 0 0 1.073-.012L13.88 6.64a3.88 3.88 0 0 1 5.487 5.48Z"
+              fill="#E84B3C" />
+          </svg>
+        </button>
+      </form>
+      <form id="removeFromFav">
+        <button type="submit" id="fillFavBtn" class="btn btn-light">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m12.82 5.58-.82.822-.824-.824a5.375 5.375 0 1 0-7.601 7.602l7.895 7.895a.75.75 0 0 0 1.06 0l7.902-7.897a5.376 5.376 0 0 0-.001-7.599 5.38 5.38 0 0 0-7.611 0Z"
+              fill="#E84B3C" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- GAME DETAILS -->
+  <div class="content">
+    <fluent-tabs activeid="about">
+      <fluent-tab id="about">About</fluent-tab>
+      <fluent-tab id="screenshots">Screenshots</fluent-tab>
+      <fluent-tab id="trailers">Trailers</fluent-tab>
+      <fluent-tab id="reviews">Reviews</fluent-tab>
+
+      <fluent-tab-panel id="aboutPanel">
+        <span id="description"></span>
+      </fluent-tab-panel>
+      <fluent-tab-panel id="screenshotsPanel">
+        <fluent-horizontal-scroll id="screenshotScroll"></fluent-horizontal-scroll>
+      </fluent-tab-panel>
+      <fluent-tab-panel id="trailersPanel">
+        <fluent-horizontal-scroll id="trailerScroll"></fluent-horizontal-scroll>
+      </fluent-tab-panel>
+      <fluent-tab-panel id="reviewsPanel">
+        <form id="addReview">
+          <input type="text" class="form-control" name="comment" placeholder="Comment" style="width: 100%;" required />
+          <select class="form-control" name="rating" required style="width: 175px;">
+            <option value="" disabled selected>Select Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+        <div class="userReviews"></div>
+      </fluent-tab-panel>
+    </fluent-tabs>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark">&copy; 2023 PlayRoom</footer>
+</body>
+
+</html>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/const.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/game.js"></script>

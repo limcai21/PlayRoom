@@ -1,0 +1,45 @@
+.searchGames {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #eee;
+  border-radius: 7px;
+  display: grid;
+  gap: 5px;
+}
+
+.searchResults {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  display: flex!important;
+  align-items: center;
+  gap: 20px;
+  padding: 10px!important;
+  border-radius: 5px;
+}
+
+.searchResults img {
+  border-radius: 5px;
+  max-width: 120px;
+}
+
+.searchResults label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bannerSection {
+  padding: 80px 60px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  height: calc(100vh - 110px);
+  flex-direction: column;
+}
+
+.bannerSection h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}

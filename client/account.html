@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account - PlayRoom</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/global.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html" id="brand">PlayRoom</a>
+    <div class="collapse navbar-collapse"></div>
+    <div class="form-inline my-2 my-sm-0">
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 authenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+      </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 unauthenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ACCOUNT SECTION -->
+  <div class="accountSection" style="padding: 20px;">
+    <div class="account" style="align-items: center; display: flex; gap: 10px; justify-content: space-between;">
+      <div class="nameAndEmail">
+        <h3 id="name" style="margin: 0;"></h3>
+        <span id="email"></span>
+      </div>
+      <button type="button" class="btn btn-primary" id="changePasswordBtn" data-toggle="modal"
+        data-target="#passwordModal">Change Password</button>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <form class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="current_password">Current Password:</label>
+            <input type="password" name="current_password" id="current_password" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="new_password">New Password:</label>
+            <input type="password" name="new_password" id="new_password" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="retype_password">Retype New Password:</label>
+            <input type="password" name="retype_password" id="retype_password" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- DIVIDER -->
+  <div class="dropdown-divider"></div>
+
+  <!-- FAVOURITE SECTION -->
+  <div class="favSection" style="padding: 20px;">
+    <h5>Your Favourite</h5>
+    <div class="yourFav cardSection"></div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dropdown-divider"></div>
+
+  <!-- GIVEN REVIEW SECTION -->
+  <div class="reviewSection" style="padding: 20px; ">
+    <h5>Your Reviews</h5>
+    <div class="yourReview cardSection"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark">&copy; 2023 PlayRoom</footer>
+  
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/const.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/account.js"></script>
+
+</html>
+
+
+<style>
+  .short_description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card img {
+    border-radius: 3px 3px 0 0;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .cardSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+  }
+
+  .card .cardAction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  select {
+    width: 120px !important;
+  }
+</style>

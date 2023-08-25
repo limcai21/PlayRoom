@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "d6f04080-ef00-46f8-9e60-82514f3ce242",
+		"name": "PlayRoom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16902203"
+	},
+	"item": [
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "All Games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/game"
+					},
+					"response": []
+				},
+				{
+					"name": "Game Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/game/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"game",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1811260"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/game/search?q=horizon",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"game",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "horizon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Game Reviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/game/review/:game_id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"game",
+								"review",
+								":game_id"
+							],
+							"variable": [
+								{
+									"key": "game_id",
+									"value": "1551360"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Register Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "P@ssw0rd!",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/account/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login to Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "P@ssw0rd!",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/account/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout of Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/account/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								},
+								{
+									"key": "current_password",
+									"value": "P@ssw0rd!",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "P@ssw0rd!!",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/account/update/password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favourites",
+			"item": [
+				{
+					"name": "Add to Favourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								},
+								{
+									"key": "game_id",
+									"value": "1811260",
+									"type": "text"
+								},
+								{
+									"key": "tier",
+									"value": "S",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/user/favourite"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Favourite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/user/favourite/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Favourite Tier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								},
+								{
+									"key": "tier",
+									"value": "S",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/favourite/:fav_id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"favourite",
+								":fav_id"
+							],
+							"variable": [
+								{
+									"key": "fav_id",
+									"value": "64b3b2b2d5f766b4b23d8d3a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Users Favourite",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/favourite/:fav_id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"favourite",
+								":fav_id"
+							],
+							"variable": [
+								{
+									"key": "fav_id",
+									"value": "64b3b2b2d5f766b4b23d8d3a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Create to Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								},
+								{
+									"key": "game_id",
+									"value": "1551360",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "karma's gonna track you down",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/user/review"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Reviews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseURL}}/user/review/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/review/:review_id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"review",
+								":review_id"
+							],
+							"variable": [
+								{
+									"key": "review_id",
+									"value": "64b3b4004425e0ca14c79194"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "localhost:3000"
+		},
+		{
+			"key": "token",
+			"value": "4563d888f21d3fdd35de206f6262969a",
+			"type": "string"
+		}
+	]
+}

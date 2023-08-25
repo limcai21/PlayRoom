@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - PlayRoom</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+  <link rel="stylesheet" href="./css/global.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html" id="brand">PlayRoom</a>
+    <div class="collapse navbar-collapse"></div>
+    <div class="form-inline my-2 my-sm-0">
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 authenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+      </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 unauthenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- REGISTER SECTION -->
+  <div class="registerSection" style="padding: 20px;">
+    <h2 style="margin-top: 30px;">Register</h2>
+    <form id="registerForm">
+      <label for="name">Name:</label>
+      <input class="form-control" type="text" name="name" id="name" required><br>
+      <label for="username">Email:</label>
+      <input class="form-control" type="email" name="email" id="email" required><br>
+      <label for="password">Password:</label>
+      <input class="form-control" type="password" name="password" id="password" required><br>
+      <label for="company">Confirm Password:</label>
+      <input class="form-control" type="password" name="retype_password" id="retype_password" required><br>
+      <input class="btn btn-primary" type="submit" value="Register">
+    </form>
+    <div id="statusMessage" class="alert alert-danger" role="alert" style="margin-top: 20px;"></div>
+    <div id="statusMessageSuccess" class="alert alert-success" role="alert" style="margin-top: 20px;"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark">&copy; 2023 PlayRoom</footer>
+
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/const.js"></script>
+  <script src="./js/global.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+
+</html>

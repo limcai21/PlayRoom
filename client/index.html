@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - PlayRoom</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html" id="brand">PlayRoom</a>
+    <div class="collapse navbar-collapse"></div>
+    <div class="form-inline my-2 my-sm-0">
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 authenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+      </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-sm-0 unauthenticatedSection">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SEARCH SECTION -->
+  <div class="bannerSection">
+    <h2>SearchIt</h2>
+    <div class="input-group">
+      <input type="text" class="form-control" id="search" required placeholder="Search by Game Name" />
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon1">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 2.75a7.25 7.25 0 0 1 5.63 11.819l4.9 4.9a.75.75 0 0 1-.976 1.134l-.084-.073-4.901-4.9A7.25 7.25 0 1 1 10 2.75Zm0 1.5a5.75 5.75 0 1 0 0 11.5 5.75 5.75 0 0 0 0-11.5Z"
+              fill="#222F3D" />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="searchGames"></div>
+  </div>
+  <div class="gameSection">
+    <div class="searchSection"></div>
+  </div>
+  <footer class="bg-dark">&copy; 2023 PlayRoom</footer>
+</body>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/const.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
