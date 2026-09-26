@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api/";
+const BASE_URL = "https://playroom-server.vercel.app/api/";
 
 const INDIVIDUAL_GAME_URL = BASE_URL + 'game/'
 const SEARCH_GAME_URL = BASE_URL + "game/search?q=";
