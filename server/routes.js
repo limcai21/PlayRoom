@@ -35,6 +35,12 @@ function authCheck(req, res, next) {
   }
 }
 
+router.get("/", function (req, res) {
+    res.status(200).json({
+        message: "PlayRoom API is running"
+    });
+});
+
 // USING
 router.get('/api/game', async (req, res) => {
   db.getGame()

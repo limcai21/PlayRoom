@@ -50,7 +50,7 @@ async function comparePassword(password, hash) {
 let db = {
     async connect() {
         try {
-            await mongoose.connect('mongodb://127.0.0.1:27017/PlayRoom');
+            await mongoose.connect(process.env.MONGODB_URI);
             return "Connected to Mongo DB";
         }
         catch (e) {
