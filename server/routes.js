@@ -69,7 +69,8 @@ router.get('/api/game/:id', async (req, res) => {
   const id = req.params.id
   db.getIndividualGame(id)
     .then(function (response) {
-      res.status(200).json(response[id]);
+      const key = Object.keys(response)[0];
+      res.status(200).json(response[key]);
     })
     .catch(function (error) {
       res.status(500).json({ "message": error.message });
