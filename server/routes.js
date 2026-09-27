@@ -14,7 +14,11 @@ db.connect()
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json())
-router.use(cors());
+router.use(cors({
+    origin: [
+        'https://limcai21.github.io', 
+    ],
+}));
 
 // AUTH
 function authCheck(req, res, next) {
